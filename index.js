@@ -17,7 +17,9 @@ db.on("error", (err) => console.log(err));
 
 // middleware
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin:"*"
+}));
 
 app.use("/products", productsRoute);
 app.use("/users", usersRoute);
